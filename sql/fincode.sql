@@ -11,6 +11,7 @@ create table user
         primary key,
     passport     varchar(255)                         null,
     password     varchar(255)                         null,
+    salt         varchar(255)                         null,
     nickname     varchar(255)                         null,
     gmt_created  datetime   default CURRENT_TIMESTAMP null,
     gmt_modified datetime   default CURRENT_TIMESTAMP null

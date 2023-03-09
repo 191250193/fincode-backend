@@ -8,13 +8,15 @@ import fincode.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.BindingResult;
+import org.springframework.util.DigestUtils;
 
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import java.util.UUID;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -40,6 +42,21 @@ public class UserServiceImpl implements UserService {
         // 暂不检查昵称唯一性
 
         UserPO userPO = new UserPO(userVO);
+
+        /*
+         * 密码加密
+         * 串 + password + 串  --- MD5加密，连续加载三次
+         * 盐值  + password  + 盐值  --- 盐值就是一个随机的字符串
+         */
+        String oldPassword = userVO.getPassword();
+        //获取盐值
+        String salt = UUID.randomUUID().toString().toUpperCase();
+        //密码盐值加密处理
+        String md5Password = getMD5Password(oldPassword,salt);
+        //加密后从新写入user对象
+        userPO.setPassword(md5Password);
+        userPO.setSalt(salt);
+
         int insert = userMapper.save(userPO);
         if (insert > 0) {
             logger.info("账号注册成功");
@@ -53,9 +70,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResultVO<UserVO> signIn(UserVO userVO, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
-        UserPO userSignIn = userMapper.findOne(userVO.getPassport(), userVO.getPassword());
+
+        UserPO userSignIn = userMapper.findByPassport(userVO.getPassport());
 
         if (userSignIn == null) {
+            logger.info("账号或密码错误,请重试。");
+            return new ResultVO<>(1,"账号或密码错误,请重试。");
+        }
+        //获取盐值
+        String salt = userSignIn.getSalt();
+
+        String md5Password = getMD5Password(userVO.getPassword(),salt);
+
+        if (!md5Password.equals(userSignIn.getPassword())) {
             logger.info("账号或密码错误,请重试。");
             return new ResultVO<>(1,"账号或密码错误,请重试。");
         }
@@ -126,5 +153,24 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean checkPassport(String passport){
         return userMapper.findByPassport(passport) == null;
+    }
+
+    /*
+     * 功能描述:MD5加密处理
+     * @Author zlj
+     * @Description
+     **/
+    private String getMD5Password(String password, String salt){
+
+        String newPassword = "";
+
+        //三次加密
+        for (int i = 0; i < 3; i++){
+            //md5加密算法的调用
+            newPassword = DigestUtils.md5DigestAsHex((salt + password + salt).getBytes()).toUpperCase();
+        }
+
+        return newPassword;
+
     }
 }

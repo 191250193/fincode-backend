@@ -13,6 +13,8 @@ public class UserPO {
 
     private String password;
 
+    private String salt;
+
     private String nickname;
 
     private String gmt_created;
