@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-@Service
+
 public interface StockFollowedService {
     // 关注
     boolean follow(StockFollowedVO vo, HttpSession session, HttpServletRequest req, HttpServletResponse resp) throws Exception;

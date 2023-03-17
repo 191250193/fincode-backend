@@ -7,17 +7,17 @@ import java.time.LocalDateTime;
 @Data
 public class StockFollowedPO {
     private Integer id;
-    private Integer user_id;
+    private Integer userId;
 
-    private Integer stock_id;
-    private LocalDateTime gmt_created;
+    private Integer stockId;
+    private LocalDateTime gmtCreated;
 
-    private LocalDateTime gmt_modified;
+    private LocalDateTime gmtModified;
 
 
 
     public StockFollowedPO(Integer user_id, Integer stock_id) {
-        this.user_id = user_id;
-        this.stock_id = stock_id;
+        this.userId = user_id;
+        this.stockId = stock_id;
     }
 }

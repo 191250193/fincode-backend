@@ -47,7 +47,7 @@ public class StockFollowed {
 
         try{
             boolean success = stockFollowedService.follow(vo,session,req,resp);
-            if(success) return new ResultVO<>(1,"ok","关注成功");
+            if(success) return new ResultVO<>(0,"ok","关注成功");
             else return new ResultVO<>(1,"err", "关注失败");
         }catch (Exception e){
             return new ResultVO<>(1,e.getMessage());
@@ -60,7 +60,7 @@ public class StockFollowed {
         if(errors!=null) return errors;
 
         boolean success = stockFollowedService.isFollow(vo,session,req,resp);
-        if(success) return new ResultVO<>(1,"ok", true);
+        if(success) return new ResultVO<>(0,"ok", true);
         else return new ResultVO<>(1,"err",false);
     }
 
@@ -70,7 +70,7 @@ public class StockFollowed {
         if(errors!=null) return errors;
 
         boolean success = stockFollowedService.unfollow(vo,session,req,resp);
-        if(success) return new ResultVO<>(1,"ok", true);
+        if(success) return new ResultVO<>(0,"ok", true);
         else return new ResultVO<>(1,"err",false);
     }
 
@@ -78,7 +78,7 @@ public class StockFollowed {
     ResultVO<?> getCnt(@Validated @RequestBody StockFollowedVO vo, BindingResult bindingResult, HttpSession session, HttpServletRequest req, HttpServletResponse resp){
         ResultVO<String> errors = paramValidation(bindingResult);
         if(errors!=null) return errors;
-        return new ResultVO<>(1,"ok",stockFollowedService.getCnt(vo.getStockId()));
+        return new ResultVO<>(0,"ok",stockFollowedService.getCnt(vo.getStockId()));
     }
 
     @PostMapping("/list")
@@ -86,7 +86,7 @@ public class StockFollowed {
         ResultVO<String> errors = paramValidation(bindingResult);
         if(errors!=null) return errors;
         List<RiskReportVO> result = stockFollowedService.listFollowed(vo,session,req,resp);
-        if(result!=null) return new ResultVO<>(1,"ok", result);
+        if(result!=null) return new ResultVO<>(0,"ok", result);
         return new ResultVO<>(1,"err","请先登陆");
     }
 }

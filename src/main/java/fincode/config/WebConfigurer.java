@@ -29,6 +29,7 @@ public class WebConfigurer implements WebMvcConfigurer {
         List<String> irs = new ArrayList<String>();
         irs.add("/user");
         irs.add("/stockfollowed");
+        irs.add("/stockrank");
         irs.add("/test");
         ir.excludePathPatterns(irs);
     }

@@ -97,7 +97,7 @@ public class StockFollowedServiceImpl implements StockFollowedService {
     public List<RiskReportVO> listFollowed(StockFollowedListVO vo, HttpSession session, HttpServletRequest req, HttpServletResponse resp) {
         Integer user_id = getUserId(session,req,resp);
         if(user_id!=null){
-            List<Integer> stockIds = stockFollowedMapper.findAllByPageForUser(user_id, vo.getPage(),vo.getLimit());
+            List<Integer> stockIds = stockFollowedMapper.findAllByPageForUser(user_id, vo.getPage()-1,vo.getLimit());
             List<RiskReportVO> result=new LinkedList<>();
             for(Integer sid:stockIds){
                 // 装填数据
