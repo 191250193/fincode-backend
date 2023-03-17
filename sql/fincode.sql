@@ -77,3 +77,20 @@ create table stock_price
     vol       double      null,
     time      int         null
 );
+
+-- fincode.stock_followed definition
+drop table if exists `stock_followed`;
+CREATE TABLE `stock_followed` (
+  `id`          int unsigned    auto_increment NOT NULL,
+  `user_id`     int unsigned    NOT NULL,
+  `stock_id`    int unsigned    NOT NULL,
+  `is_deleted`  tinyint(1)      default 0 NOT NULL,
+  gmt_created  datetime   default CURRENT_TIMESTAMP NULL,
+  gmt_modified datetime   default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NULL,
+
+  PRIMARY KEY (`id`),
+
+  KEY `fk_stock_id` (`stock_id`),
+  CONSTRAINT `fk_stock_id` FOREIGN KEY (`stock_id`) REFERENCES `stock` (`id`),
+  CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;

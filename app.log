@@ -1,14 +1,559 @@
-2023-03-05 00:03:40.553  INFO 3664 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_271 on LAPTOP-7R1TGRU6 with PID 3664 (C:\Users\user\Desktop\毕设\重构\target\classes started by user in C:\Users\user\Desktop\毕设\重构)
-2023-03-05 00:03:40.562  INFO 3664 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
-2023-03-05 00:03:42.645  INFO 3664 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
-2023-03-05 00:03:42.667  INFO 3664 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-03-05 00:03:42.694  INFO 3664 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
-2023-03-05 00:03:42.949  INFO 3664 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-03-05 00:03:42.952  INFO 3664 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2340 ms
-2023-03-05 00:03:43.748  INFO 3664 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
-2023-03-05 00:03:43.769  INFO 3664 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 3.668 seconds (JVM running for 4.932)
-2023-03-05 00:06:07.091  INFO 3664 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-03-05 00:06:07.091  INFO 3664 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-03-05 00:06:07.092  INFO 3664 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2023-03-05 00:06:07.247  INFO 3664 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-03-05 00:06:07.366  INFO 3664 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17 15:29:57.148  INFO 44111 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 44111 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 15:29:57.155  INFO 44111 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 15:29:58.971  INFO 44111 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 15:29:58.984  INFO 44111 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 15:29:58.985  INFO 44111 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 15:29:59.169  INFO 44111 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 15:29:59.170  INFO 44111 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1967 ms
+2023-03-17 15:29:59.526  WARN 44111 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockFollowed': Unsatisfied dependency expressed through field 'stockFollowedService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'fincode.service.StockFollowedService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-03-17 15:29:59.529  INFO 44111 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-03-17 15:29:59.543  INFO 44111 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-03-17 15:29:59.556 ERROR 44111 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field stockFollowedService in fincode.controller.StockFollowed required a bean of type 'fincode.service.StockFollowedService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'fincode.service.StockFollowedService' in your configuration.
+
+2023-03-17 15:31:06.860  INFO 44569 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 44569 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 15:31:06.861  INFO 44569 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 15:31:07.843  INFO 44569 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 15:31:07.853  INFO 44569 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 15:31:07.853  INFO 44569 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 15:31:07.898  INFO 44569 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 15:31:07.898  INFO 44569 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 997 ms
+2023-03-17 15:31:07.944  WARN 44569 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'stockFollowed': Unsatisfied dependency expressed through field 'stockFollowedService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'fincode.service.StockFollowedService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-03-17 15:31:07.947  INFO 44569 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-03-17 15:31:07.962  INFO 44569 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-03-17 15:31:07.974 ERROR 44569 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field stockFollowedService in fincode.controller.StockFollowed required a bean of type 'fincode.service.StockFollowedService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'fincode.service.StockFollowedService' in your configuration.
+
+2023-03-17 15:32:00.097  INFO 44809 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 44809 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 15:32:00.099  INFO 44809 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 15:32:00.964  INFO 44809 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 15:32:00.974  INFO 44809 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 15:32:00.974  INFO 44809 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 15:32:01.017  INFO 44809 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 15:32:01.017  INFO 44809 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 883 ms
+2023-03-17 15:32:01.501  INFO 44809 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 15:32:01.507  INFO 44809 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 1.786 seconds (JVM running for 2.074)
+2023-03-17 15:32:21.424  INFO 44809 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 15:32:21.424  INFO 44809 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 15:32:21.425  INFO 44809 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-17 15:32:21.555  INFO 44809 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-17 15:32:21.771  INFO 44809 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17 15:32:21.889  INFO 44809 --- [http-nio-8083-exec-1] fincode.service.impl.UserServiceImpl     : 账号注册成功
+2023-03-17 15:32:26.165  INFO 44809 --- [http-nio-8083-exec-2] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 15:35:18.604 ERROR 44809 --- [http-nio-8083-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class fincode.model.StockFollowedVO]; nested exception is com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `fincode.model.StockFollowedVO` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (PushbackInputStream); line: 2, column: 3]] with root cause
+
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `fincode.model.StockFollowedVO` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (PushbackInputStream); line: 2, column: 3]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1764) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:400) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1209) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1415) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:362) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:195) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:322) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4593) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3601) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:378) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:342) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:185) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:158) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:131) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:170) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1063) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.48.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.48.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:228) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1723) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_333]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_333]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_333]
+
+2023-03-17 15:37:01.711  INFO 44809 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-17 15:37:01.715  INFO 44809 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-03-17 15:37:12.377  INFO 45762 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 45762 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 15:37:12.379  INFO 45762 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 15:37:13.283  INFO 45762 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 15:37:13.293  INFO 45762 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 15:37:13.293  INFO 45762 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 15:37:13.344  INFO 45762 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 15:37:13.344  INFO 45762 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 929 ms
+2023-03-17 15:37:13.940  INFO 45762 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 15:37:13.950  INFO 45762 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 1.96 seconds (JVM running for 2.411)
+2023-03-17 15:37:17.230  INFO 45762 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 15:37:17.230  INFO 45762 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 15:37:17.231  INFO 45762 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-17 15:37:17.368 ERROR 45762 --- [http-nio-8083-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.http.converter.HttpMessageConversionException: Type definition error: [simple type, class fincode.model.StockFollowedVO]; nested exception is com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `fincode.model.StockFollowedVO` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (PushbackInputStream); line: 2, column: 3]] with root cause
+
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `fincode.model.StockFollowedVO` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (PushbackInputStream); line: 2, column: 3]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1764) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:400) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1209) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1415) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:362) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:195) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:322) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4593) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3601) ~[jackson-databind-2.12.3.jar:2.12.3]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:378) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:342) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:185) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:158) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:131) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:170) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1063) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) ~[tomcat-embed-core-9.0.48.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.8.jar:5.3.8]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) ~[tomcat-embed-core-9.0.48.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:228) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:190) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:163) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1723) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_333]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_333]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.48.jar:9.0.48]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_333]
+
+2023-03-17 15:38:35.051  INFO 46162 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 46162 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 15:38:35.053  INFO 46162 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 15:38:36.160  INFO 46162 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 15:38:36.170  INFO 46162 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 15:38:36.171  INFO 46162 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 15:38:36.220  INFO 46162 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 15:38:36.220  INFO 46162 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1119 ms
+2023-03-17 15:38:36.749  INFO 46162 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 15:38:36.757  INFO 46162 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 2.108 seconds (JVM running for 2.442)
+2023-03-17 15:38:39.943  INFO 46162 --- [http-nio-8083-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 15:38:39.943  INFO 46162 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 15:38:39.944  INFO 46162 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-17 15:38:40.059  WARN 46162 --- [http-nio-8083-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `fincode.model.StockFollowedVO` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `fincode.model.StockFollowedVO` (although at least one Creator exists): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (PushbackInputStream); line: 2, column: 3]]
+2023-03-17 15:40:23.381  INFO 46649 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 46649 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 15:40:23.383  INFO 46649 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 15:40:24.409  INFO 46649 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 15:40:24.419  INFO 46649 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 15:40:24.419  INFO 46649 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 15:40:24.461  INFO 46649 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 15:40:24.462  INFO 46649 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1035 ms
+2023-03-17 15:40:24.952  INFO 46649 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 15:40:24.959  INFO 46649 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 1.927 seconds (JVM running for 2.207)
+2023-03-17 15:40:27.847  INFO 46649 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 15:40:27.847  INFO 46649 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 15:40:27.848  INFO 46649 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-17 15:44:44.402  INFO 47423 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 47423 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 15:44:44.404  INFO 47423 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 15:44:45.205  INFO 47423 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 15:44:45.214  INFO 47423 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 15:44:45.215  INFO 47423 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 15:44:45.257  INFO 47423 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 15:44:45.257  INFO 47423 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 813 ms
+2023-03-17 15:44:45.741  INFO 47423 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 15:44:45.749  INFO 47423 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 1.719 seconds (JVM running for 2.02)
+2023-03-17 15:44:48.926  INFO 47423 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 15:44:48.926  INFO 47423 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 15:44:48.927  INFO 47423 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-17 15:44:49.072  INFO 47423 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-17 15:44:49.255  INFO 47423 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17 15:44:49.306  INFO 47423 --- [http-nio-8083-exec-1] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 15:44:55.282  INFO 47423 --- [http-nio-8083-exec-4] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 15:45:25.025  INFO 47423 --- [http-nio-8083-exec-6] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 15:45:35.435  INFO 47423 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-17 15:45:35.438  INFO 47423 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-03-17 15:45:39.041  INFO 47707 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 47707 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 15:45:39.043  INFO 47707 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 15:45:40.146  INFO 47707 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 15:45:40.159  INFO 47707 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 15:45:40.159  INFO 47707 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 15:45:40.219  INFO 47707 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 15:45:40.219  INFO 47707 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1121 ms
+2023-03-17 15:45:40.941  INFO 47707 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 15:45:40.950  INFO 47707 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 2.327 seconds (JVM running for 3.294)
+2023-03-17 15:45:49.831  INFO 47707 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 15:45:49.831  INFO 47707 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 15:45:49.833  INFO 47707 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-17 15:45:50.043  INFO 47707 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-17 15:45:50.280  INFO 47707 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17 15:45:50.337  INFO 47707 --- [http-nio-8083-exec-1] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 15:46:27.857  INFO 47707 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-17 15:46:27.862  INFO 47707 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-03-17 15:46:48.814  INFO 47972 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 47972 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 15:46:48.817  INFO 47972 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 15:46:49.949  INFO 47972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 15:46:49.960  INFO 47972 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 15:46:49.960  INFO 47972 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 15:46:50.009  INFO 47972 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 15:46:50.010  INFO 47972 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1120 ms
+2023-03-17 15:46:50.604  INFO 47972 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 15:46:50.615  INFO 47972 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 2.296 seconds (JVM running for 2.676)
+2023-03-17 15:46:52.137  INFO 47972 --- [http-nio-8083-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 15:46:52.137  INFO 47972 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 15:46:52.138  INFO 47972 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-17 15:46:52.522  INFO 47972 --- [http-nio-8083-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-17 15:46:52.748  INFO 47972 --- [http-nio-8083-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17 15:46:52.806  INFO 47972 --- [http-nio-8083-exec-2] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 15:47:42.142  WARN 47972 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49s293ms584µs724ns).
+2023-03-17 15:47:42.173  INFO 47972 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-17 15:47:42.178  INFO 47972 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-03-17 15:49:04.030  INFO 48425 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 48425 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 15:49:04.032  INFO 48425 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 15:49:05.224  INFO 48425 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 15:49:05.237  INFO 48425 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 15:49:05.237  INFO 48425 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 15:49:05.293  INFO 48425 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 15:49:05.293  INFO 48425 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1226 ms
+2023-03-17 15:49:05.817  INFO 48425 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 15:49:05.824  INFO 48425 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 2.245 seconds (JVM running for 2.521)
+2023-03-17 15:49:08.806  INFO 48425 --- [http-nio-8083-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 15:49:08.806  INFO 48425 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 15:49:08.808  INFO 48425 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-03-17 15:49:08.967  INFO 48425 --- [http-nio-8083-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-17 15:49:09.126  INFO 48425 --- [http-nio-8083-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17 15:49:09.172  INFO 48425 --- [http-nio-8083-exec-2] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 15:53:18.027  INFO 48425 --- [http-nio-8083-exec-6] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 15:54:03.412  INFO 48425 --- [http-nio-8083-exec-7] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 15:54:16.811  INFO 48425 --- [http-nio-8083-exec-9] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 15:54:21.918  INFO 48425 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-17 15:54:21.923  INFO 48425 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-03-17 15:54:24.826  INFO 49640 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 49640 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 15:54:24.829  INFO 49640 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 15:54:25.797  INFO 49640 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 15:54:25.808  INFO 49640 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 15:54:25.808  INFO 49640 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 15:54:25.880  INFO 49640 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 15:54:25.880  INFO 49640 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1006 ms
+2023-03-17 15:54:26.503  INFO 49640 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 15:54:26.511  INFO 49640 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 2.076 seconds (JVM running for 2.463)
+2023-03-17 15:54:38.519  INFO 49640 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 15:54:38.520  INFO 49640 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 15:54:38.523  INFO 49640 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-03-17 15:54:38.708  INFO 49640 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-17 15:54:38.894  INFO 49640 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17 15:54:38.951  INFO 49640 --- [http-nio-8083-exec-1] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 15:55:33.646  INFO 49640 --- [http-nio-8083-exec-4] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 15:57:49.327  INFO 49640 --- [http-nio-8083-exec-8] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 15:58:06.911  INFO 49640 --- [http-nio-8083-exec-10] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 15:58:56.823  INFO 49640 --- [http-nio-8083-exec-2] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 15:59:07.940  INFO 49640 --- [http-nio-8083-exec-3] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 15:59:15.089  INFO 49640 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-17 15:59:15.093  INFO 49640 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-03-17 16:01:35.638  INFO 51053 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 51053 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 16:01:35.641  INFO 51053 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 16:01:36.822  INFO 51053 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 16:01:36.837  INFO 51053 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 16:01:36.837  INFO 51053 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 16:01:36.903  INFO 51053 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 16:01:36.903  INFO 51053 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1224 ms
+2023-03-17 16:01:37.464  INFO 51053 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 16:01:37.475  INFO 51053 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 2.273 seconds (JVM running for 2.701)
+2023-03-17 16:01:49.114  INFO 51053 --- [http-nio-8083-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 16:01:49.114  INFO 51053 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 16:01:49.115  INFO 51053 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-17 16:01:49.288  INFO 51053 --- [http-nio-8083-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-17 16:01:49.464  INFO 51053 --- [http-nio-8083-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17 16:01:49.521  INFO 51053 --- [http-nio-8083-exec-2] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:01:49.596  INFO 51053 --- [http-nio-8083-exec-3] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [ 16-Apr-2023 07:58:06 GMT; JSESSIONID=FAB685A71624EE00ECDE02F9ACF9A2B4] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2023-03-17 16:02:54.835  INFO 51053 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-17 16:02:54.839  INFO 51053 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-03-17 16:03:33.585  INFO 51544 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 51544 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 16:03:33.587  INFO 51544 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 16:03:34.449  INFO 51544 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 16:03:34.458  INFO 51544 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 16:03:34.458  INFO 51544 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 16:03:34.501  INFO 51544 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 16:03:34.501  INFO 51544 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 877 ms
+2023-03-17 16:03:34.998  INFO 51544 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 16:03:35.009  INFO 51544 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 1.74 seconds (JVM running for 2.042)
+2023-03-17 16:03:41.080  INFO 51544 --- [http-nio-8083-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 16:03:41.080  INFO 51544 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 16:03:41.082  INFO 51544 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-03-17 16:03:41.263  INFO 51544 --- [http-nio-8083-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-17 16:03:41.445  INFO 51544 --- [http-nio-8083-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17 16:03:41.500  INFO 51544 --- [http-nio-8083-exec-2] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:03:41.589  INFO 51544 --- [http-nio-8083-exec-3] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [ 16-Apr-2023 07:58:06 GMT; JSESSIONID=4262C4135F53D5806CED721825EA4B55] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2023-03-17 16:04:19.948  INFO 51544 --- [http-nio-8083-exec-4] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:05:40.020  INFO 51544 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-17 16:05:40.025  INFO 51544 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-03-17 16:05:45.221  INFO 52188 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 52188 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 16:05:45.224  INFO 52188 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 16:05:46.636  INFO 52188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 16:05:46.650  INFO 52188 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 16:05:46.651  INFO 52188 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 16:05:46.753  INFO 52188 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 16:05:46.754  INFO 52188 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1477 ms
+2023-03-17 16:05:47.423  INFO 52188 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 16:05:47.431  INFO 52188 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 2.676 seconds (JVM running for 2.98)
+2023-03-17 16:06:39.794  INFO 52188 --- [http-nio-8083-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 16:06:39.795  INFO 52188 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 16:06:39.796  INFO 52188 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-17 16:06:39.959  INFO 52188 --- [http-nio-8083-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-17 16:06:40.162  INFO 52188 --- [http-nio-8083-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17 16:06:40.220  INFO 52188 --- [http-nio-8083-exec-2] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:06:40.317  INFO 52188 --- [http-nio-8083-exec-3] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [ 16-Apr-2023 07:58:06 GMT; JSESSIONID=C5AA0F1ABDD9D7EADE7E27BFB5840F5B] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2023-03-17 16:06:54.799  INFO 52188 --- [http-nio-8083-exec-4] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:07:05.545  INFO 52188 --- [http-nio-8083-exec-6] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:07:09.600  INFO 52188 --- [http-nio-8083-exec-8] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:07:11.108  INFO 52188 --- [http-nio-8083-exec-10] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:07:11.800  INFO 52188 --- [http-nio-8083-exec-2] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:07:12.201  INFO 52188 --- [http-nio-8083-exec-4] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:07:31.447  INFO 52188 --- [http-nio-8083-exec-6] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:07:48.560  INFO 52188 --- [http-nio-8083-exec-8] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:08:00.924  INFO 52188 --- [http-nio-8083-exec-10] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:08:58.893  INFO 52188 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-17 16:08:58.897  INFO 52188 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-03-17 16:09:04.421  INFO 52974 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 52974 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 16:09:04.423  INFO 52974 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 16:09:05.324  INFO 52974 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 16:09:05.333  INFO 52974 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 16:09:05.333  INFO 52974 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 16:09:05.383  INFO 52974 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 16:09:05.383  INFO 52974 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 918 ms
+2023-03-17 16:09:05.902  INFO 52974 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 16:09:05.911  INFO 52974 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 1.873 seconds (JVM running for 2.158)
+2023-03-17 16:09:16.031  INFO 52974 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 16:09:16.032  INFO 52974 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 16:09:16.033  INFO 52974 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-17 16:09:16.197  INFO 52974 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-17 16:09:16.354  INFO 52974 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17 16:09:16.397  INFO 52974 --- [http-nio-8083-exec-1] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:09:16.471  INFO 52974 --- [http-nio-8083-exec-3] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [ 16-Apr-2023 07:58:06 GMT; JSESSIONID=4EF1DE54AE68BB2753C5CFD0E00AB437] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2023-03-17 16:09:18.233  INFO 52974 --- [http-nio-8083-exec-4] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:09:38.286  INFO 52974 --- [http-nio-8083-exec-6] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:09:46.630  INFO 52974 --- [http-nio-8083-exec-8] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:09:51.415  INFO 52974 --- [http-nio-8083-exec-10] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:09:54.011  INFO 52974 --- [http-nio-8083-exec-1] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:10:13.750  INFO 52974 --- [http-nio-8083-exec-5] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:11:11.738  INFO 52974 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-17 16:11:11.742  INFO 52974 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-03-17 16:11:15.291  INFO 53531 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 53531 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 16:11:15.294  INFO 53531 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 16:11:16.303  INFO 53531 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 16:11:16.318  INFO 53531 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 16:11:16.318  INFO 53531 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 16:11:16.385  INFO 53531 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 16:11:16.385  INFO 53531 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1043 ms
+2023-03-17 16:11:17.017  INFO 53531 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 16:11:17.025  INFO 53531 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 2.189 seconds (JVM running for 2.477)
+2023-03-17 16:11:39.504  INFO 53531 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 16:11:39.504  INFO 53531 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 16:11:39.505  INFO 53531 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-17 16:11:39.669  INFO 53531 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-17 16:11:39.837  INFO 53531 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17 16:11:39.893  INFO 53531 --- [http-nio-8083-exec-1] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:11:39.978  INFO 53531 --- [http-nio-8083-exec-3] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [ 16-Apr-2023 07:58:06 GMT; JSESSIONID=08769008185AC84FF6B677A8D1FEA951] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2023-03-17 16:11:44.152  INFO 53531 --- [http-nio-8083-exec-4] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:13:45.719  INFO 53531 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-17 16:13:45.724  INFO 53531 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-03-17 16:13:51.796  INFO 54039 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 54039 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 16:13:51.799  INFO 54039 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 16:13:52.750  INFO 54039 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 16:13:52.764  INFO 54039 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 16:13:52.764  INFO 54039 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 16:13:52.838  INFO 54039 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 16:13:52.838  INFO 54039 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 994 ms
+2023-03-17 16:13:53.407  INFO 54039 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 16:13:53.417  INFO 54039 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 2.02 seconds (JVM running for 2.315)
+2023-03-17 16:14:18.841  INFO 54039 --- [http-nio-8083-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 16:14:18.841  INFO 54039 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 16:14:18.842  INFO 54039 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-17 16:14:19.024  INFO 54039 --- [http-nio-8083-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-17 16:14:19.182  INFO 54039 --- [http-nio-8083-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17 16:14:19.228  INFO 54039 --- [http-nio-8083-exec-2] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:14:19.307  INFO 54039 --- [http-nio-8083-exec-3] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [ 16-Apr-2023 07:58:06 GMT; JSESSIONID=AA3C38FF465BBE8CAFD14E1ADE6876C5] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2023-03-17 16:15:17.649  INFO 54039 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-17 16:15:17.652  INFO 54039 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-03-17 16:15:19.828  INFO 54445 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 54445 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 16:15:19.830  INFO 54445 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 16:15:20.877  INFO 54445 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 16:15:20.887  INFO 54445 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 16:15:20.888  INFO 54445 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 16:15:20.935  INFO 54445 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 16:15:20.936  INFO 54445 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1055 ms
+2023-03-17 16:15:21.516  INFO 54445 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 16:15:21.526  INFO 54445 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 2.227 seconds (JVM running for 2.624)
+2023-03-17 16:15:23.761  INFO 54445 --- [http-nio-8083-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 16:15:23.761  INFO 54445 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 16:15:23.763  INFO 54445 --- [http-nio-8083-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-03-17 16:15:23.946  INFO 54445 --- [http-nio-8083-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-17 16:15:24.090  INFO 54445 --- [http-nio-8083-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17 16:15:24.129  INFO 54445 --- [http-nio-8083-exec-2] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:15:24.198  INFO 54445 --- [http-nio-8083-exec-3] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [ 16-Apr-2023 07:58:06 GMT; JSESSIONID=7AD6E8C7AAEA388B844FA791EDDB2858] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2023-03-17 16:15:30.095  INFO 54445 --- [http-nio-8083-exec-4] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:15:54.551  INFO 54445 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-17 16:15:54.556  INFO 54445 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-03-17 16:15:58.412  INFO 54740 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 54740 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 16:15:58.414  INFO 54740 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 16:15:59.274  INFO 54740 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 16:15:59.284  INFO 54740 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 16:15:59.284  INFO 54740 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 16:15:59.338  INFO 54740 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 16:15:59.338  INFO 54740 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 879 ms
+2023-03-17 16:15:59.921  INFO 54740 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 16:15:59.938  INFO 54740 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 1.926 seconds (JVM running for 2.241)
+2023-03-17 16:16:10.395  INFO 54740 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 16:16:10.395  INFO 54740 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 16:16:10.396  INFO 54740 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-17 16:16:10.569  INFO 54740 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-17 16:16:10.741  INFO 54740 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17 16:16:10.791  INFO 54740 --- [http-nio-8083-exec-1] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:16:15.517  INFO 54740 --- [http-nio-8083-exec-4] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:16:15.547  INFO 54740 --- [http-nio-8083-exec-5] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [ 16-Apr-2023 07:58:06 GMT; JSESSIONID=B850F0F7250E65E156E6CFBD10146A79] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2023-03-17 16:16:29.020  INFO 54740 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-17 16:16:29.025  INFO 54740 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-03-17 16:16:31.059  INFO 54929 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 54929 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 16:16:31.062  INFO 54929 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 16:16:32.121  INFO 54929 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 16:16:32.131  INFO 54929 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 16:16:32.132  INFO 54929 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 16:16:32.190  INFO 54929 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 16:16:32.190  INFO 54929 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1072 ms
+2023-03-17 16:16:32.840  INFO 54929 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 16:16:32.852  INFO 54929 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 2.268 seconds (JVM running for 2.67)
+2023-03-17 16:16:38.662  INFO 54929 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 16:16:38.662  INFO 54929 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 16:16:38.664  INFO 54929 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-03-17 16:16:38.907  INFO 54929 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-17 16:16:39.111  INFO 54929 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17 16:16:39.173  INFO 54929 --- [http-nio-8083-exec-1] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:16:39.244  INFO 54929 --- [http-nio-8083-exec-3] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [ 16-Apr-2023 07:58:06 GMT; JSESSIONID=8180045454D72B02BFD1E5C61678F806] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2023-03-17 16:17:12.618  INFO 54929 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-17 16:17:12.623  INFO 54929 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-03-17 16:17:59.176  INFO 55321 --- [main] fincode.FinCodeStartUp                   : Starting FinCodeStartUp using Java 1.8.0_333 on MAGI with PID 55321 (/home/zwx/Desktop/security/fincode-backend/target/classes started by zwx in /home/zwx/Desktop/security/fincode-backend)
+2023-03-17 16:17:59.179  INFO 55321 --- [main] fincode.FinCodeStartUp                   : No active profile set, falling back to default profiles: default
+2023-03-17 16:18:00.163  INFO 55321 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2023-03-17 16:18:00.172  INFO 55321 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-17 16:18:00.172  INFO 55321 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2023-03-17 16:18:00.214  INFO 55321 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-17 16:18:00.215  INFO 55321 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 984 ms
+2023-03-17 16:18:00.814  INFO 55321 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2023-03-17 16:18:00.822  INFO 55321 --- [main] fincode.FinCodeStartUp                   : Started FinCodeStartUp in 2.097 seconds (JVM running for 2.371)
+2023-03-17 16:18:06.723  INFO 55321 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-17 16:18:06.723  INFO 55321 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-03-17 16:18:06.724  INFO 55321 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-03-17 16:18:06.875  INFO 55321 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-03-17 16:18:07.019  INFO 55321 --- [http-nio-8083-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-03-17 16:18:07.058  INFO 55321 --- [http-nio-8083-exec-1] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:18:07.118  INFO 55321 --- [http-nio-8083-exec-3] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [ 16-Apr-2023 07:58:06 GMT; JSESSIONID=1EE576021709823B3EFCDE584E9ED398] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2023-03-17 16:18:26.954  INFO 55321 --- [http-nio-8083-exec-4] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:18:30.082  INFO 55321 --- [http-nio-8083-exec-6] fincode.service.impl.UserServiceImpl     : 登录成功。
+2023-03-17 16:18:35.010  INFO 55321 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-17 16:18:35.014  INFO 55321 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

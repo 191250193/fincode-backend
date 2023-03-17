@@ -28,6 +28,7 @@ public class WebConfigurer implements WebMvcConfigurer {
         // 不拦截路径
         List<String> irs = new ArrayList<String>();
         irs.add("/user");
+        irs.add("/stockfollowed");
         irs.add("/test");
         ir.excludePathPatterns(irs);
     }
