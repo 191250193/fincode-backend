@@ -28,6 +28,7 @@ create table industry
     gmt_modified datetime   default CURRENT_TIMESTAMP null
 );
 
+
 create table stock
 (
     id           int unsigned auto_increment
@@ -60,6 +61,7 @@ create table stock_detail
     constraint stock_detail_stock_fk
         foreign key (stock_id) references stock (id)
 );
+
 drop table if exists `stock_price`;
 create table stock_price
 (
@@ -77,6 +79,7 @@ create table stock_price
     vol       double      null,
     time      int         null
 );
+
 
 -- fincode.stock_followed definition
 drop table if exists `stock_followed`;

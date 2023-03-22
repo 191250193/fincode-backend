@@ -70,9 +70,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResultVO<UserVO> signIn(UserVO userVO, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
-
         UserPO userSignIn = userMapper.findByPassport(userVO.getPassport());
-
         if (userSignIn == null) {
             logger.info("账号或密码错误,请重试。");
             return new ResultVO<>(1,"账号或密码错误,请重试。");
