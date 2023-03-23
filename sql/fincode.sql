@@ -97,3 +97,70 @@ CREATE TABLE `stock_followed` (
   CONSTRAINT `fk_stock_id` FOREIGN KEY (`stock_id`) REFERENCES `stock` (`id`),
   CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+create table strategy
+(
+    id           int
+        primary key,
+    name         varchar(32)                          null,
+    type         varchar(32)                          null,
+    is_deleted   tinyint(1) default 0                 null,
+    gmt_created  datetime   default CURRENT_TIMESTAMP null,
+    gmt_modified datetime   default CURRENT_TIMESTAMP null,
+    func_enabled int                                  null
+);
+
+create table stock_tip_overall
+(
+    stock_id                int       not null,
+    strategy_id             int       not null,
+    industry_id             int       null,
+    day_span                int       null,
+    history_profit_rate     double    null,
+    history_match_rate      double    null,
+    industry_match_rate     double    null,
+    profit_index            double    null,
+    is_deleted     tinyint(1) default 0      null,
+    gmt_created  datetime   default CURRENT_TIMESTAMP null,
+    gmt_modified datetime   default CURRENT_TIMESTAMP null,
+    profit_rate             double     null,
+    match_rate              double     null,
+    all_count               int        null,
+    return_index            double     null,
+    primary key (stock_id, strategy_id)
+);
+
+create table stock_tip_daily
+(
+    id           int auto_increment
+        primary key,
+    stock_id     int  null ,
+    strategy_id  int  null ,
+    type         varchar(255) null,
+    trade_date   int null ,
+    high         double null,
+    low          double null,
+    open         double null,
+    close        double null,
+    is_deleted   tinyint(1) default 0 null,
+    gmt_created  datetime   default CURRENT_TIMESTAMP null,
+    gmt_modified datetime   default CURRENT_TIMESTAMP null,
+    ext_info     varchar(255) null,
+    next_day_open double null,
+    next_day_date int null,
+    is_hit        int null
+);
+
+create table stock_tip_data
+(
+    id           int auto_increment
+        primary key,
+    sell_tip_id  int null,
+    buy_tip_id   int null,
+    profit_rate  double null,
+    stock_id     int null,
+    strategy_id  int null,
+    buy_in_date  int null,
+    sell_out_date int null
+);
+

@@ -17,4 +17,11 @@ public interface StockPriceMapper {
 
     )
     public List<StockPricePO> searchPrice(@Param("tsCode") String ts_code, @Param("time") Integer end, @Param("limit") Integer limit);
+
+
+    @Select("select * from stock_price order by time desc")
+    StockPricePO findOneByTimeDesc();
+
+    @Select("select * from stock_price where companyId=#{companyId} order by time desc limit 1")
+    StockPricePO findOneByCompanyId(String companyId);
 }

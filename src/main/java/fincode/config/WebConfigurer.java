@@ -32,7 +32,10 @@ public class WebConfigurer implements WebMvcConfigurer {
         irs.add("/stockrank");
         irs.add("/stock");
         irs.add("/stockprice");
+        irs.add("/strategy");
         irs.add("/test");
+        irs.add("/investrec");
+        irs.add("/stocktip");
         ir.excludePathPatterns(irs);
     }
 }
