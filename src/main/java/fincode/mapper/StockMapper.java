@@ -45,6 +45,13 @@ public interface StockMapper {
     )
     public StockPricePO searchPriceByIdAndTime( @Param("tsCode") String ts_code,@Param("time") Integer lastUpdateDate);
 
+    @Select("select * from stock where ts_code=#{ts_code}")
+    List<StockPO> findByCode(String ts_code);
 
+    @Select("select * from stock where id={stockId}")
+    List<StockPO> findById(int stockId);
+
+    @Select("select * from stock where id={stockId} limit 100")
+    List<StockPO> findByIdLimit100(int stockId);
 
 }

@@ -1,21 +1,21 @@
-package fincode.model;
+package fincode.model.req.stocktip;
 
 import lombok.Data;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 import java.util.List;
 
 /**
  * @author zlj
- * @date 2023/3/23
+ * @date 2023/4/13
  */
 
 @Data
-public class StockTipApiListTipsReq {
+public class StockTipApiListTipsByIdReq {
 
-    @NotBlank(message = "股票代码不能为空")
-    String stockCode;
+    @Min(value = 1, message = "股票Id不能为空")
+    int stockId;
 
     //TODO: "required|min-length:1#策略列表不能为空|策略列表不能为空"
     List<Integer> strategyIdList;

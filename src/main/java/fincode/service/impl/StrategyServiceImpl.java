@@ -42,9 +42,7 @@ public class StrategyServiceImpl implements StrategyService {
             return new ResultVO<>(1,"没有相关策略");
         }
 
-        //TODO: 这里没看懂源码计算matchCnt 和 profitCnt
-
-        int matchCnt = 1, profitCnt = 1;
+        int matchCnt = stockTipOverallMapper.countMatch(id), profitCnt = stockTipOverallMapper.countProfit(id);
         StrategyVO strategyVO = new StrategyVO(queryOne);
 
         strategyVO.setMatchCnt(matchCnt);
