@@ -44,7 +44,9 @@ public class StockRank {
         ResultVO<String> errors = paramValidation(bindingResult);
         if(errors!=null) return errors;
         List<StockRankInfo> info = stockRankService.getStockRank(vo.getSortType(),vo.getPage(), vo.getLimit());
-        if(info!=null) return new ResultVO<>(0, "ok",info);
+        if(info!=null) {
+            return new ResultVO<>(0, "ok",info);
+        }
         return new ResultVO<>(1,"查询超出范围");
     }
 }

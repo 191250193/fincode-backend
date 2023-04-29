@@ -52,7 +52,7 @@ public class InvestRecommendServiceImpl implements InvestRecommendService {
 
         for (Map<String, Object> item : stockTipOverall) {
             int stock_id = (int) item.get("stock_id");
-            double return_index = (double) item.get("return_index");
+            double return_index = (double) item.get("avg(return_index)");
             InvestRecommendCompose investRecommendCompose = new InvestRecommendCompose();
             investRecommendCompose.stockTipOverall.setStock_id(stock_id);
             investRecommendCompose.stockTipOverall.setReturn_index(return_index);

@@ -16,23 +16,23 @@ public class StockTipOverallPO {
 
     Integer strategy_id;
 
-    Integer industry_id;
-
-    Integer day_span;
-
-    Double history_profit_rate;
-
-    Double history_match_rate;
-
-    Double industry_match_rate;
-
-    Double profit_index;
-
-    Boolean is_deleted;
-
-    String gmt_created;
-
-    String gmt_modified;
+//    Integer industry_id;
+//
+//    Integer day_span;
+//
+//    Double history_profit_rate;
+//
+//    Double history_match_rate;
+//
+//    Double industry_match_rate;
+//
+//    Double profit_index;
+//
+//    Boolean is_deleted;
+//
+//    String gmt_created;
+//
+//    String gmt_modified;
 
     Double profit_rate;
 

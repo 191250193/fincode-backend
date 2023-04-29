@@ -12,7 +12,7 @@ import java.util.Map;
 public interface StockTipOverallMapper {
 
     //根据stockId找出所有股票信息
-    @Select("select * from stock_tip_overall where stock_id=#{stock_id} and is_delete=0")
+    @Select("select * from stock_tip_overall where stock_id=#{stock_id}")
     List<StockTipOverallPO> findAllStrategyForOneStock(int stock_id);
 
     //根据id获取股票信息
@@ -24,12 +24,12 @@ public interface StockTipOverallMapper {
     List<StockTipOverallPO> findAllByOrder(int strategy_id, String orderByField, int start, int pageSize);
 
     //根据stock_id分组查询avg(return_index)
-    @Select("select stock_id, avg(return_index) as return_index group by stock_id")
+    @Select("select stock_id, avg(return_index) from stock_tip_overall as return_index group by stock_id")
     List<Map<String, Object>> findReturnIndexGroupId();
 
-    @Select("select count(*) from stock_tip_overall where is_delete=0 and strategy_id=#{strategy_id} and match_rate>0")
+    @Select("select count(*) from stock_tip_overall where strategy_id=#{strategy_id} and match_rate>0")
     int countMatch(int strategy_id);
 
-    @Select("select count(*) from stock_tip_overall where is_delete=0 and strategy_id=#{strategy_id} and profit_rate>0")
+    @Select("select count(*) from stock_tip_overall where strategy_id=#{strategy_id} and profit_rate>0")
     int countProfit(int strategy_id);
 }

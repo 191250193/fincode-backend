@@ -1,7 +1,9 @@
 package fincode.controller;
 
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import fincode.model.*;
+import fincode.model.req.strategy.StrategyApiGetDetailReq;
 import fincode.service.StrategyService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,8 +27,8 @@ public class Strategy {
 
     // GetDetail @summary 单个策略详情接口
     @PostMapping("/getdetail")
-    public ResultVO<StrategyVO> getDetail(@RequestParam int id){
-        return strategyService.getDetail(id);
+    public ResultVO<StrategyVO> getDetail(@RequestBody StrategyApiGetDetailReq strategyApiGetDetailReq){
+        return strategyService.getDetail(strategyApiGetDetailReq.getId());
     }
 
     // List @summary 返回策略列表接口(无分页)

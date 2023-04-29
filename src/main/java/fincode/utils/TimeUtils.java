@@ -15,4 +15,9 @@ public class TimeUtils {
 
         return LocalDate.of(year, month, day);
     }
+
+    // 返回两个日期间的天数
+    public static int getPeriod(int startDate, int endDate) {
+        return (int) (Math.abs(TimeUtils.convertTimeFromInt(endDate).toEpochDay() - TimeUtils.convertTimeFromInt(startDate).toEpochDay()) + 1);
+    }
 }

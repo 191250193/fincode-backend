@@ -33,5 +33,6 @@ public class StockDetailVO {
         is_deleted=po.getIs_deleted();
         gmt_created=po.getGmt_created();
         gmt_modified=po.getGmt_modified();
+        ext_info = po.getExt_info();
     }
 }

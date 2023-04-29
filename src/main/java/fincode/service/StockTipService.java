@@ -3,6 +3,7 @@ package fincode.service;
 import fincode.model.StockTipInfo;
 import fincode.model.StockTipLatestInfo;
 import fincode.model.StockTipOverallInfo;
+import fincode.model.StockWithStrategyTipInfo;
 
 import java.util.List;
 
@@ -20,5 +21,7 @@ public interface StockTipService {
 
     // 列出某些股票某些策略的最新
     List<StockTipLatestInfo> listLatest(List<Integer> stockIdList, List<Integer> strategyIdList);
+
+    StockWithStrategyTipInfo getPeriodRate(int stockId, int strategyId, int startDate, int endDate);
 
 }

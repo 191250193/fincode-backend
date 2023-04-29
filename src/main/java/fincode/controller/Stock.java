@@ -1,6 +1,7 @@
 package fincode.controller;
 
 import fincode.model.*;
+import fincode.model.req.stock.StockApiGetDetailReqById;
 import fincode.service.StockFollowedService;
 import fincode.service.StockService;
 import org.slf4j.Logger;
@@ -50,18 +51,18 @@ public class Stock {
 
     }
     @PostMapping("/getdetail")
-    ResultVO<?> getDetail( @Validated @RequestBody StockVO vo, BindingResult bindingResult){
+    ResultVO<?> getDetail( @Validated @RequestBody StockApiGetDetailReqById vo, BindingResult bindingResult){
         ResultVO<String> errors = paramValidation(bindingResult);
         if(errors!=null) return errors;
-        StockDetailVO info = stockService.getDetail(vo.getStockId(),vo.getStockCode());
+        StockDetailVO info = stockService.getDetail(vo.getId(),null);
         if(info!=null) return new ResultVO<>(0, "ok",info);
         return new ResultVO<>(1,"查询超出范围");
     }
     @PostMapping("/getfullinfo")
-    ResultVO<?> getFullInfo(@Validated @RequestBody StockVO vo, BindingResult bindingResult){
+    ResultVO<?> getFullInfo(@Validated @RequestBody StockApiGetDetailReqById vo, BindingResult bindingResult){
         ResultVO<String> errors = paramValidation(bindingResult);
         if(errors!=null) return errors;
-        StockFullInfoVO info = stockService.getFullInfo(vo.getStockId());
+        StockFullInfoVO info = stockService.getFullInfo(vo.getId());
         if(info!=null) return new ResultVO<>(0, "ok",info);
         return new ResultVO<>(1,"查询超出范围");
     }
@@ -73,5 +74,6 @@ public class Stock {
         if(result!=null) return new ResultVO<>(0,"ok", result);
         return new ResultVO<>(1,"err","请先登陆");
     }
+
 
 }

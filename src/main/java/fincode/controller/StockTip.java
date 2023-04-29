@@ -1,26 +1,18 @@
 package fincode.controller;
 
-import fincode.model.ResultVO;
-import fincode.model.StockTipLatestInfo;
-import fincode.model.StockTipOverallInfo;
-import fincode.model.req.stocktip.StockTipApiListOverallReq;
-import fincode.model.req.stocktip.StockTipApiListTipsByIdReq;
-import fincode.model.req.stocktip.StockTipApiListTipsReq;
-import fincode.model.StockTipInfo;
-import fincode.model.req.stocktip.StockTipApiListTipsLatestReq;
+import fincode.model.*;
+import fincode.model.req.stocktip.*;
 import fincode.service.StockTipService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -28,6 +20,7 @@ import java.util.List;
  * @date 2023/3/23
  */
 
+@CrossOrigin
 @RestController
 @RequestMapping("/stocktip")
 public class StockTip {
@@ -72,23 +65,24 @@ public class StockTip {
 
     // @summary 列出某股票和对应的一批策略给出的投资建议组合
     @PostMapping("/listtipsbyid")
-    public ResultVO<StockTipInfo> listTipsById(@Validated @RequestBody StockTipApiListTipsByIdReq stockTipApiListTipsByIdReq, BindingResult result){
-        if (result.hasErrors()){
-            List<FieldError> fieldErrors = result.getFieldErrors();
+    public ResultVO<StockTipInfo> listTipsById(@RequestParam int stockId, @RequestParam List<Integer> strategyIdList, @RequestParam String startDate, @RequestParam String endDate) {
+    //public ResultVO<StockTipInfo> listTipsById(@Validated @RequestParam StockTipApiListTipsByIdReq stockTipApiListTipsByIdReq, BindingResult result){
+//        if (result.hasErrors()){
+//            List<FieldError> fieldErrors = result.getFieldErrors();
+//
+//            fieldErrors.forEach(fieldError -> {
+//                logger.error(fieldError.getField() + fieldError.getDefaultMessage());
+//            });
+//
+//            String errorMessage = "";
+//            for (FieldError fieldError : fieldErrors){
+//                errorMessage += fieldError.getDefaultMessage();
+//            }
+//            return new ResultVO<>(1,errorMessage);
+//        }
 
-            fieldErrors.forEach(fieldError -> {
-                logger.error(fieldError.getField() + fieldError.getDefaultMessage());
-            });
-
-            String errorMessage = "";
-            for (FieldError fieldError : fieldErrors){
-                errorMessage += fieldError.getDefaultMessage();
-            }
-            return new ResultVO<>(1,errorMessage);
-        }
-
-        String startDate = stockTipApiListTipsByIdReq.getStartDate();
-        String endDate = stockTipApiListTipsByIdReq.getEndDate();
+//        String startDate = stockTipApiListTipsByIdReq.getStartDate();
+//        String endDate = stockTipApiListTipsByIdReq.getEndDate();
 
         int start = Integer.parseInt(startDate.substring(0,4) + startDate.substring(5,7) + startDate.substring(8));
         int end = 0;
@@ -98,7 +92,8 @@ public class StockTip {
         }
         end = Integer.parseInt(endDate.substring(0,4) + endDate.substring(5,7) + endDate.substring(8));
 
-        StockTipInfo stockTipInfo = stockTipService.listTipsById(stockTipApiListTipsByIdReq.getStockId(), stockTipApiListTipsByIdReq.getStrategyIdList(), start, end);
+//        StockTipInfo stockTipInfo = stockTipService.listTipsById(stockTipApiListTipsByIdReq.getStockId(), Arrays.asList(stockTipApiListTipsByIdReq.getStrategyIdList()), start, end);
+        StockTipInfo stockTipInfo = stockTipService.listTipsById(stockId, strategyIdList, start, end);
         if (stockTipInfo == null) return new ResultVO<>(1,"获取失败");
         return new ResultVO<>(0,"获取成功", stockTipInfo);
     }
@@ -132,6 +127,26 @@ public class StockTip {
     public ResultVO<List<StockTipLatestInfo>> listLatest(@RequestBody StockTipApiListTipsLatestReq stockTipApiListTipsLatestReq) {
         List<StockTipLatestInfo> stockTipLatestInfos = stockTipService.listLatest(stockTipApiListTipsLatestReq.getStockIdList(), stockTipApiListTipsLatestReq.getStrategyIdList());
         return new ResultVO<>(0, "获取成功", stockTipLatestInfos);
+    }
+
+
+    // @summary 列出某股票和某策略在一段时间内的收益率、匹配率
+    @PostMapping("/getperiodrate")
+    public ResultVO<StockWithStrategyTipInfo> getPeriodRate(@RequestBody StockTipApiPeriodRateReq stockTipApiPeriodRateReq) {
+        String startDate = stockTipApiPeriodRateReq.getStartDate();
+        String endDate = stockTipApiPeriodRateReq.getEndDate();
+
+        int start = Integer.parseInt(startDate.substring(0,4) + startDate.substring(5,7) + startDate.substring(8));
+        int end = 0;
+        if (endDate == null || "".equals(endDate)) {
+            LocalDate now = LocalDate.now();
+            endDate = now.toString();
+        }
+        end = Integer.parseInt(endDate.substring(0,4) + endDate.substring(5,7) + endDate.substring(8));
+
+        StockWithStrategyTipInfo res = stockTipService.getPeriodRate(stockTipApiPeriodRateReq.getStockId(), stockTipApiPeriodRateReq.getStrategyId(), start, end);
+        if (res != null) return new ResultVO<>(0,"success", res);
+        return new ResultVO<>(1,"fail");
     }
 
 }

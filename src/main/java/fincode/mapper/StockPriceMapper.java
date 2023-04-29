@@ -25,6 +25,6 @@ public interface StockPriceMapper {
     @Select("select * from stock_price where companyId=#{companyId} order by time desc limit 1")
     StockPricePO findOneByCompanyId(String companyId);
 
-    @Select("select * from stock_price where companyId=#{companyId} and time={time} limit 1")
+    @Select("select * from stock_price where companyId=#{companyId} and time=#{time} limit 1")
     StockPricePO find(String companyId, int time);
 }

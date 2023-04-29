@@ -132,7 +132,7 @@ create table strategy
 #     profit_rate             double     null,
 #     match_rate              double     null,
 #     all_count               int        null,
-#     return_index            double     null,
+#     return_index            double     not null default 0,
 #     primary key (stock_id, strategy_id)
 # );
 
@@ -147,6 +147,16 @@ CREATE TABLE stock_tip_overall (
                                    PRIMARY KEY (`stock_id`,`strategy_id`),
                                    KEY `stock_tip_overall_stock_id_strategy_id_index` (`stock_id`,`strategy_id`)
 );
+
+# alter table stock_tip_overall add column industry_id int null after strategy_id;
+# alter table stock_tip_overall add column day_span int null after industry_id;
+# alter table stock_tip_overall add column  int null after strategy_id;
+# alter table stock_tip_overall add column industry_id int null after strategy_id;
+# alter table stock_tip_overall add column industry_id int null after strategy_id;
+# alter table stock_tip_overall add column industry_id int null after strategy_id;
+# alter table stock_tip_overall add column industry_id int null after strategy_id;
+# alter table stock_tip_overall add column industry_id int null after strategy_id;
+# alter table stock_tip_overall add column industry_id int null after strategy_id;
 
 # create table stock_tip_daily
 # (

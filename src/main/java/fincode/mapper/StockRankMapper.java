@@ -21,13 +21,13 @@ public interface StockRankMapper {
     @Select("select * from stock_price " +
             "where time = #{time} " +
             "order by ${sortType}")
-    List<StockPricePO> getTodayRank(@Param("time") Integer lastUpdateDate, @Param("sortType") String s);
+    List<StockPricePO> getTodayRank(@Param("time") Integer time, @Param("sortType") String sortType);
 
     @Select("select * from stock_detail " +
             "where ts_code = #{cid}")
-    StockDetailPO selectDetailByTSCode(@Param("cid") String companyId);
+    StockDetailPO selectDetailByTSCode(@Param("cid") String cid);
 
     @Select("select * from industry " +
             "where id = #{iid}")
-    IndustryPO selectIndustryById(@Param("iid") Integer industryId);
+    IndustryPO selectIndustryById(@Param("iid") Integer iid);
 }

@@ -48,10 +48,10 @@ public interface StockMapper {
     @Select("select * from stock where ts_code=#{ts_code}")
     List<StockPO> findByCode(String ts_code);
 
-    @Select("select * from stock where id={stockId}")
+    @Select("select * from stock where id=#{stockId}")
     List<StockPO> findById(int stockId);
 
-    @Select("select * from stock where id={stockId} limit 100")
+    @Select("select * from stock where id=#{stockId} limit 100")
     List<StockPO> findByIdLimit100(int stockId);
 
 }

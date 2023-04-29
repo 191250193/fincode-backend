@@ -4,6 +4,7 @@ import fincode.mapper.*;
 import fincode.model.*;
 import fincode.service.StockTipService;
 import fincode.utils.RateUtils;
+import fincode.utils.TimeUtils;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -108,10 +109,11 @@ public class StockTipServiceImpl implements StockTipService {
             StockTipOverallInfo info = new StockTipOverallInfo();
             info.setStockId(stockTipOverallPO.getStock_id());
             info.setStrategyId(stockTipOverallPO.getStrategy_id());
-            info.setHistoryProfitRate(stockTipOverallPO.getHistory_profit_rate());
-            info.setHistoryMatchRate(stockTipOverallPO.getHistory_match_rate());
-            info.setIndustryMatchRate(stockTipOverallPO.getIndustry_match_rate());
-            info.setProfitIndex(stockTipOverallPO.getProfit_index());
+            info.setStrategyName(strategyMap.get(stockTipOverallPO.getStrategy_id()));
+//            info.setHistoryProfitRate(stockTipOverallPO.getHistory_profit_rate());
+//            info.setHistoryMatchRate(stockTipOverallPO.getHistory_match_rate());
+//            info.setIndustryMatchRate(stockTipOverallPO.getIndustry_match_rate());
+//            info.setProfitIndex(stockTipOverallPO.getProfit_index());
             info.setLatestTip(tip);
             res.add(info);
         }
@@ -255,7 +257,7 @@ public class StockTipServiceImpl implements StockTipService {
             List<StockTipDailyPO> find = stockTipDailyMapper.findAllByTradeDate(stockId, strategy_id, latestTradeDate);
             if (find != null && !find.isEmpty()) tipList.addAll(find);
         }
-        if (tipList.isEmpty()) return null;
+//        if (tipList.isEmpty()) return null;
 
         HashMap<Integer, String> res = new HashMap<>();
         for (int strategy_id : strategyIdList) {
@@ -302,4 +304,28 @@ public class StockTipServiceImpl implements StockTipService {
         return tipList;
     }
 
+    @Override
+    public StockWithStrategyTipInfo getPeriodRate(int stockId, int strategyId, int startDate, int endDate) {
+        List<StockTipDailyPO> tipList = stockTipDailyMapper.findAll(stockId, strategyId, startDate, endDate);
+
+        // 升序排列日期
+        tipList.sort((o1, o2) -> o2.getTrade_date() - o1.getTrade_date());
+
+        StockWithStrategyTipInfo res = new StockWithStrategyTipInfo();
+        res.setStockId(stockId);
+        res.setStrategyId(strategyId);
+
+        // 计算选定日期区间收益率
+        double profitRate = RateUtils.getPeriodProfitRateFromDO(tipList);
+        double period = TimeUtils.getPeriod(startDate, endDate);
+
+        // 计算匹配率
+        double matchRate = RateUtils.getPeriodMatchRateFromDO(tipList);
+        res.setProfitRate(profitRate / period);
+        res.setMatchRate(matchRate);
+
+        return res;
+    }
+
 }
+
