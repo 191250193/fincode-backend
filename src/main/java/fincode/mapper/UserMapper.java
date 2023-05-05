@@ -10,7 +10,6 @@ public interface UserMapper {
             "#{userPO.id}, " +
             "#{userPO.passport}, " +
             "#{userPO.password}, " +
-            "#{userPO.salt}, " +
             "#{userPO.nickname}, " +
             "#{userPO.gmt_created}, " +
             "#{userPO.gmt_modified})")

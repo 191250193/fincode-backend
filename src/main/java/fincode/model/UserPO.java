@@ -13,7 +13,7 @@ public class UserPO {
 
     private String password;
 
-    private String salt;
+//    private String salt;
 
     private String nickname;
 

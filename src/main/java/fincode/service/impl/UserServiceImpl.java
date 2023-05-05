@@ -48,14 +48,14 @@ public class UserServiceImpl implements UserService {
          * 串 + password + 串  --- MD5加密，连续加载三次
          * 盐值  + password  + 盐值  --- 盐值就是一个随机的字符串
          */
-        String oldPassword = userVO.getPassword();
-        //获取盐值
-        String salt = UUID.randomUUID().toString().toUpperCase();
-        //密码盐值加密处理
-        String md5Password = getMD5Password(oldPassword,salt);
-        //加密后从新写入user对象
-        userPO.setPassword(md5Password);
-        userPO.setSalt(salt);
+//        String oldPassword = userVO.getPassword();
+//        //获取盐值
+//        String salt = UUID.randomUUID().toString().toUpperCase();
+//        //密码盐值加密处理
+//        String md5Password = getMD5Password(oldPassword,salt);
+//        //加密后从新写入user对象
+//        userPO.setPassword(md5Password);
+//        userPO.setSalt(salt);
 
         int insert = userMapper.save(userPO);
         if (insert > 0) {
@@ -76,11 +76,11 @@ public class UserServiceImpl implements UserService {
             return new ResultVO<>(1,"账号或密码错误,请重试。");
         }
         //获取盐值
-        String salt = userSignIn.getSalt();
+//        String salt = userSignIn.getSalt();
 
-        String md5Password = getMD5Password(userVO.getPassword(),salt);
+//        String md5Password = getMD5Password(userVO.getPassword(),salt);
 
-        if (!md5Password.equals(userSignIn.getPassword())) {
+        if (!userVO.getPassword().equals(userSignIn.getPassword())) {
             logger.info("账号或密码错误,请重试。");
             return new ResultVO<>(1,"账号或密码错误,请重试。");
         }
