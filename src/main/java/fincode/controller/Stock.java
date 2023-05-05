@@ -2,6 +2,7 @@ package fincode.controller;
 
 import fincode.model.*;
 import fincode.model.req.stock.StockApiGetDetailReqById;
+import fincode.model.req.stock.StockApiSearchReq;
 import fincode.service.StockFollowedService;
 import fincode.service.StockService;
 import org.slf4j.Logger;
@@ -40,7 +41,8 @@ public class Stock {
         return null;
     }
     @PostMapping("/search")
-    ResultVO<?> search( @RequestParam String keyWord){
+    ResultVO<?> search( @RequestBody StockApiSearchReq stockApiSearchReq){
+        String keyWord = stockApiSearchReq.getKeyword();
         if(keyWord==null){
             return new ResultVO<>(1,"err", "错误的输入");
         }

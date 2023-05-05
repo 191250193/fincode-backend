@@ -46,9 +46,9 @@ public class StockFollowedServiceImpl implements StockFollowedService {
             }
         }
         //  无效cookie，不含用户名
-        if (cookie_username == null || "".equals(cookie_username)) {
-            return null;
-        }
+//        if (cookie_username == null || "".equals(cookie_username)) {
+//            return null;
+//        }
 
         // 获取我们登录后存在session中的用户信息，如果为空，表示session已经过期
         Object obj = session.getAttribute("username");
@@ -57,8 +57,8 @@ public class StockFollowedServiceImpl implements StockFollowedService {
             return null;
         }
 
-        if(!cookie_username.equals(obj)) return null;
-        UserPO user = userMapper.findByPassport(cookie_username);
+//        if(!cookie_username.equals(obj)) return null;
+        UserPO user = userMapper.findByPassport((String) obj);
         if(user==null) return null;
         return user.getId();
     }
