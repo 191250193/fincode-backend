@@ -11,8 +11,8 @@ public interface StockFollowedMapper {
 
     // 插入一条关注信息
     @Insert("insert into stock_followed(user_id, stock_id) values(" +
-            "#{po.user_id}," +
-            "#{po.stock_id}" +
+            "#{po.userId}," +
+            "#{po.stockId}" +
             ")")
     public int save(@Param("po") StockFollowedPO po);
 
@@ -26,8 +26,8 @@ public interface StockFollowedMapper {
     // 删除一条关注信息
     @Delete("update stock_followed " +
             "set is_deleted = 1 " +
-            "where user_id = #{po.user_id} " +
-            "and stock_id = #{po.stock_id} " +
+            "where user_id = #{po.userId} " +
+            "and stock_id = #{po.stockId} " +
             "and is_deleted!=1")
     public int softDelete(@Param("po") StockFollowedPO po);
 
