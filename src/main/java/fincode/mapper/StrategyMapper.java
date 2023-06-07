@@ -14,4 +14,7 @@ public interface StrategyMapper {
 
     @Select("select * from strategy where is_deleted=0")
     List<StrategyPO> findAll();
+
+    @Select("select * from strategy where is_deleted=0 and name=#{name}")
+    StrategyPO findByName(String name);
 }

@@ -42,7 +42,9 @@ public class StockRank {
     @PostMapping("/list")
     public ResultVO<?> getStockRank(@Validated @RequestBody StockRankVO vo, BindingResult bindingResult){
         ResultVO<String> errors = paramValidation(bindingResult);
-        if(errors!=null) return errors;
+        if(errors!=null) {
+            return errors;
+        }
         List<StockRankInfo> info = stockRankService.getStockRank(vo.getSortType(),vo.getPage(), vo.getLimit());
         if(info!=null) {
             return new ResultVO<>(0, "ok",info);

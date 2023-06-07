@@ -230,3 +230,24 @@ CREATE TABLE `stock_tip_data` (
                                   UNIQUE KEY `stock_tip_data_id_uindex` (`id`),
                                   KEY `stock_strategy_id_buy_in_date_index` (`stock_id`,`strategy_id`,`buy_in_date` DESC)
 );
+
+drop table if exists `stock_pool`;
+
+create table `stock_pool` (
+                                  `id` bigint NOT NULL AUTO_INCREMENT,
+                                  `user_id` int NOT NULL,
+                                  `pool_name` varchar(255) NOT NULL,
+                                  `condition` text NOT NULL,
+                                  `gmt_created` datetime DEFAULT CURRENT_TIMESTAMP,
+                                  `gmt_modified` datetime DEFAULT CURRENT_TIMESTAMP,
+                                  PRIMARY KEY (`id`)
+);
+
+drop table if exists `pool_detail`;
+
+create table `pool_detail` (
+                                   `id` bigint NOT NULL AUTO_INCREMENT,
+                                   `pool_id` bigint NOT NULL,
+                                  `stock_id` int NOT NULL,
+                                  PRIMARY KEY (`id`)
+);

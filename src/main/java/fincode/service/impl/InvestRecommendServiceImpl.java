@@ -43,12 +43,16 @@ public class InvestRecommendServiceImpl implements InvestRecommendService {
         List<InvestRecommendRes> res = new ArrayList<>();
 
         StockPricePO stockPrice = stockPriceMapper.findOneByCompanyId("000001.SZ");
-        if (stockPrice == null) return null;
+        if (stockPrice == null) {
+            return null;
+        }
         int lastUpdateDate = stockPrice.getTime();
 
         // 这样可以令平均值(也就是综合收益指数)覆盖 return_index 字段
         List<Map<String, Object>> stockTipOverall = stockTipOverallMapper.findReturnIndexGroupId();
-        if (stockTipOverall == null) return null;
+        if (stockTipOverall == null) {
+            return null;
+        }
 
         for (Map<String, Object> item : stockTipOverall) {
             int stock_id = (int) item.get("stock_id");
